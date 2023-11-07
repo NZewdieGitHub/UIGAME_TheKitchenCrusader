@@ -8,7 +8,8 @@ public class Timer : MonoBehaviour
 {
     public float timeRemaining = 0;
     public bool timeIsRunning = false;
-    public TMP_Text timeText;
+    [SerializeField]
+    public TextMeshProUGUI timeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class Timer : MonoBehaviour
             {
                 // count down
                 timeRemaining -= Time.deltaTime;
+                updateTimer(timeRemaining);
             }
             else
             {
@@ -37,11 +39,16 @@ public class Timer : MonoBehaviour
          }
     }
     /// <summary>
-    /// Update timer every frame
+    /// Update and display timer text every frame
     /// </summary>
     /// <param name="currentTime"></param>
     void updateTimer(float currentTime)
     {
+        // increment the current time by one second
+        currentTime += 1;
+        // create seconds
+        float seconds = Mathf.FloorToInt(currentTime / 60);
 
+        timeText.text = string.Format("Timer:", seconds);
     }
 }
