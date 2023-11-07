@@ -14,6 +14,13 @@ public class HUD : MonoBehaviour
     string tableText = "Tables Left: ";
     int numTables = 3;
 
+    // Timer fields
+    [SerializeField]
+    TMP_Text timeText;
+    string timerText = "Timer: ";
+    public float timeRemaining = 0;
+    public bool timeIsRunning = false;
+
     // Menu Manager field
     MenuManager mm;
     [SerializeField]
@@ -29,6 +36,8 @@ public class HUD : MonoBehaviour
       // in the game   
 
         TablesLeft.text = tableText + numTables.ToString();
+        timeIsRunning = true;
+        timeText.SetText("WIP");
     }
 
     public void RemoveFurniture()
@@ -42,16 +51,31 @@ public class HUD : MonoBehaviour
         // Check if All Tables are destroyed
         if (numTables <= 0)
         {
-            
-                SpawnLoseMenu();
-                
-            
+            SpawnLoseMenu();
         }
     }
     // Update is called once per frame
     void Update()
     {
-        
+        // If the timer has started
+        if (timeIsRunning)
+        {
+            // if time hasn't run out
+            if (timeRemaining >= 0)
+            {
+                Debug.Log("Tick");
+                // count down
+                timeRemaining -=  Time.deltaTime;
+                updateTimer(timeRemaining);
+            }
+            else
+            {
+                // declare that time is up
+                Debug.Log("Time is up.");
+                timeRemaining = 0;
+                timeIsRunning = false;
+            }
+        }
     }
     /// <summary>
     /// Instantiate Win Message
@@ -72,4 +96,17 @@ public class HUD : MonoBehaviour
         
         Time.timeScale = 0f;
     }
+    /// <summary>
+    /// Update and display timer text every frame
+    /// </summary>
+    /// <param name="currentTime"></param>
+    void updateTimer(float currentTime)
+    {
+        // increment the current time by one second
+        currentTime += 1;
+        // create seconds
+        int seconds = Mathf.FloorToInt(currentTime / 60);
+        timeText.SetText("Timer: " + timeRemaining + seconds.ToString());
+    }
+
 }

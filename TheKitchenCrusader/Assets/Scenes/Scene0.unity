@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165, y: -66}
+  m_AnchoredPosition: {x: -25.199158, y: -0.0012054443}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.49999997, y: 0.49999994}
 --- !u!114 &24492902
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -190.3747, y: -74.7901, z: 0, w: 0}
+  m_margin: {x: -1.0567627, y: -2.1225681, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -510,6 +510,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TablesLeft: {fileID: 1341327809}
+  timeText: {fileID: 24492902}
+  timeRemaining: 12
+  timeIsRunning: 0
   WinMenu: {fileID: 4684744425659619521, guid: 41e67ed2f36ab894c9544962c16c80b6, type: 3}
   LoseMenu: {fileID: 336394961}
 --- !u!114 &932371305
@@ -840,7 +843,6 @@ GameObject:
   - component: {fileID: 1543087790}
   - component: {fileID: 1543087792}
   - component: {fileID: 1543087791}
-  - component: {fileID: 1543087793}
   m_Layer: 5
   m_Name: Timer Panel
   m_TagString: Untagged
@@ -906,21 +908,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543087789}
   m_CullTransparentMesh: 1
---- !u!114 &1543087793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543087789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a900a635a78e64d99acd6854a0d0f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeRemaining: 60
-  timeIsRunning: 1
-  timeText: {fileID: 24492902}
 --- !u!1001 &1934682557
 PrefabInstance:
   m_ObjectHideFlags: 0

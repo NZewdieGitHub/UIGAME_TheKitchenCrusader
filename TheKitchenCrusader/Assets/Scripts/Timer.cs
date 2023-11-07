@@ -6,14 +6,17 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    // set up time fields
+    [SerializeField]
+    TMP_Text timeText;
+    string timerText = "Timer: ";
     public float timeRemaining = 0;
     public bool timeIsRunning = false;
-    [SerializeField]
-    public TextMeshProUGUI timeText;
     // Start is called before the first frame update
     void Start()
     {
         timeIsRunning = true;
+        timeText.SetText("Working");
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class Timer : MonoBehaviour
             // if time hasn't run out
             if (timeRemaining >= 0)
             {
+                Debug.Log("Tick");
                 // count down
                 timeRemaining -= Time.deltaTime;
                 updateTimer(timeRemaining);
