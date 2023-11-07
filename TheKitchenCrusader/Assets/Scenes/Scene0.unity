@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Timer:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6877777f2473484583cc6a455e9a888, type: 2}
+  m_sharedMaterial: {fileID: 6174275284075032198, guid: e6877777f2473484583cc6a455e9a888, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -300,7 +300,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.86666673, g: 0.8196079, b: 0.75294125, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -541,15 +541,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7383855031403992502, guid: df9e174fb8938a04eb13fc148524a98d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6
+      value: 3.7464
       objectReference: {fileID: 0}
     - target: {fileID: 7383855031403992502, guid: df9e174fb8938a04eb13fc148524a98d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -3.06
       objectReference: {fileID: 0}
     - target: {fileID: 7383855031403992502, guid: df9e174fb8938a04eb13fc148524a98d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.93
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 7383855031403992502, guid: df9e174fb8938a04eb13fc148524a98d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -647,8 +647,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Tables Remaining: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6877777f2473484583cc6a455e9a888, type: 2}
+  m_sharedMaterial: {fileID: 6174275284075032198, guid: e6877777f2473484583cc6a455e9a888, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.9921569, g: 0.92549026, b: 0.6509804, a: 0.5529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -816,11 +816,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7383855031403992502, guid: df9e174fb8938a04eb13fc148524a98d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 7383855031403992502, guid: df9e174fb8938a04eb13fc148524a98d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.44
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 7383855031403992502, guid: df9e174fb8938a04eb13fc148524a98d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
+  m_Color: {r: 0.9921569, g: 0.92549026, b: 0.6509804, a: 0.45490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
