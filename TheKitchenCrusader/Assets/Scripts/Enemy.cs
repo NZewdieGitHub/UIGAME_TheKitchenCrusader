@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     public float speed = 10;
     public float health = 10;
 
+    //sprite color setup
+    SpriteRenderer spriteRenderer;
+
     // Enemy Clamp Setup
     private BoundsCheck bndCheck;
 
@@ -30,7 +33,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // get access to the sprite renderer component
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -70,6 +74,7 @@ public class Enemy : MonoBehaviour
             health -= 1;
             // Destroy ketchup shot
             Destroy(collision.gameObject);
+            
             // check if health is below 
             if (health <= 0)
             {
@@ -77,6 +82,10 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
 
             }
+            // reduce polarity
+            Color color = spriteRenderer.color;
+            color.a -= 0.1f;
+            spriteRenderer.color = color;
         }
         // else if it's mustard
         else if (collision.gameObject.CompareTag("Mustard"))
@@ -86,6 +95,13 @@ public class Enemy : MonoBehaviour
 
             // Slow enemy down
             speed -= 0.5f;
+            // If speed is at its limit
+            if (speed <= 0)
+            {
+                // keep enemy speed at 0
+                speed = 0;
+
+            }
         }
 
     }

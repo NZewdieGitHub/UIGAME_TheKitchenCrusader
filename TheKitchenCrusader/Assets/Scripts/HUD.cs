@@ -14,11 +14,15 @@ public class HUD : MonoBehaviour
     string tableText = "Tables Left: ";
     int numTables = 3;
 
+    [SerializeField]
+    TextMeshProUGUI recordText;
+    string tables = "You have defended: ";
+    string results = "tables in the level";
     // Timer fields
     [SerializeField]
     TMP_Text timeText;
     string timerText = "Timer: ";
-    public float timeRemaining = 0;
+    public float timeRemaining = 0f;
     public bool timeIsRunning = false;
 
     // Menu Manager field
@@ -74,6 +78,19 @@ public class HUD : MonoBehaviour
                 Debug.Log("Time is up.");
                 timeRemaining = 0;
                 timeIsRunning = false;
+                // Check to see if the perfered ammount of tables are
+                // protected
+                if (numTables > 1)
+                {
+                    // Player wins
+                    SpawnWinMenu();
+                }
+                else
+                {
+                    // player loses game
+                    SpawnLoseMenu();
+                }
+                
             }
         }
     }
@@ -84,6 +101,8 @@ public class HUD : MonoBehaviour
     {
         WinMenu.SetActive(true);
         Time.timeScale = 0f;
+        // set player's results
+        recordText.SetText(tables + numTables + "/3 " + results);
     }
     /// <summary>
     /// Instantiate Lose Menu
@@ -93,7 +112,6 @@ public class HUD : MonoBehaviour
         //if (LoseMenu.activeInHierarchy == false)
         //{
         LoseMenu.SetActive(true);
-        
         Time.timeScale = 0f;
     }
     /// <summary>
@@ -103,10 +121,10 @@ public class HUD : MonoBehaviour
     void updateTimer(float currentTime)
     {
         // increment the current time by one second
-        currentTime += 1;
+        currentTime += 1f;
         // create seconds
-        int seconds = Mathf.FloorToInt(currentTime / 60);
-        timeText.SetText("Timer: " + timeRemaining + seconds.ToString());
+        float seconds = Mathf.FloorToInt(currentTime / 60f);
+        timeText.SetText("Timer: " + timeRemaining);
     }
 
 }
