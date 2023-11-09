@@ -42,4 +42,11 @@ public class MenuManager : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+    /// <summary>
+    /// Quits the game on the main menu
+    /// </summary>
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
