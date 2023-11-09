@@ -11,9 +11,34 @@ public class Main : MonoBehaviour
     public GameObject[] prefabEnemies;
     public float enemySpawnPerSecond = 0.5f;
     public float enemyInsetDefault = 1.5f;
-
+    public GameObject prefabPowerUp;
     private BoundsCheck bndCheck;
+    public eWeaponType[] powerUpFrequency = new eWeaponType[]
+    {
+        eWeaponType.none,
+        eWeaponType.mustard
+    };
+    /// <summary>
+    /// Called by an enemy whenever its destroyed
+    /// </summary>
+    /// <param name="e"></param>
+    static public void EnemyDestroyed(Enemy e)
+    {
+        // potentially generate a PowerUp
+        if (Random.value <= e.powerUpDropChance)
+        {
+            // choose a powerup from the possibiities in powerup frequency
+            int ndx = Random.Range(0, S.powerUpFrequency.Length);
+            eWeaponType pUpType = S.powerUpFrequency[ndx];
 
+            // Spawn a PowerUp
+            GameObject go = Instantiate(S.prefabPowerUp);
+            MustardBottle mB = go.GetComponent<MustardBottle>();
+            
+            // set it to the position of the destoryed enemy
+            go.transform.position = e.transform.position;
+        }
+    }
     private void Awake()
     {
         S = this;

@@ -122,5 +122,21 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
+        // if player collides with ammo
+        if (collision.gameObject.CompareTag("Ammo"))
+        {
+           
+            Destroy(collision.gameObject);
+
+            // refill ammo
+            mustardAmmo += 5;
+
+            if (mustardAmmo >= 25)
+            {
+                mustardAmmo = 25;
+            }
+            // update UI
+            hud.AddMustardAmmo();
+        }
     }
 }

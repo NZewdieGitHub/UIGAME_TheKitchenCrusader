@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     [Header("Inscribed")]
     public float speed = 10;
     public float health = 10;
+    // Chance to drop power up
+    public float powerUpDropChance = 1f;
+    protected bool calledShipDestroyed = false;
 
     //sprite color setup
     SpriteRenderer spriteRenderer;
@@ -80,7 +83,12 @@ public class Enemy : MonoBehaviour
             {
                 // Destroy enemy
                 Destroy(gameObject);
-
+                // Tell Main that this enemy was destroyed
+                if (!calledShipDestroyed)
+                {
+                    calledShipDestroyed = true;
+                    Main.EnemyDestroyed(this);
+                }
             }
             // reduce polarity
             Color color = spriteRenderer.color;

@@ -79,6 +79,24 @@ public class HUD : MonoBehaviour
             ammoText.text = "Mustard Ammo: " + ammoCount.ToString(); 
         }
     }
+    /// <summary>
+    /// Add ammo to text UI
+    /// </summary>
+    public void AddMustardAmmo()
+    {
+             
+            ammoCount += 5;
+
+            // Update text
+            ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
+        
+        if (ammoCount >= 25)
+        {
+            ammoCount = 25;
+            // Update text
+            ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
