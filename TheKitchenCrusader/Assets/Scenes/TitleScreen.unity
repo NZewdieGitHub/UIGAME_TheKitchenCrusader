@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 356246337}
   - component: {fileID: 356246336}
   m_Layer: 5
-  m_Name: Movement
+  m_Name: MovementCredit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1114,7 +1114,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1965026435}
+      - m_Target: {fileID: 1484826306}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1637,7 +1637,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &660524450
@@ -2292,7 +2292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1086682399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2367,7 +2367,7 @@ GameObject:
   - component: {fileID: 1155066898}
   - component: {fileID: 1155066897}
   m_Layer: 5
-  m_Name: Performance text
+  m_Name: ClampingMainText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2412,7 +2412,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- '
+  m_text: '- Clamping, enemy placement, and item dropping functionality by Introduction
+    to Game Design, Prototyping, and Development by Jeremy Gibson Bond'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6877777f2473484583cc6a455e9a888, type: 2}
   m_sharedMaterial: {fileID: 6174275284075032198, guid: e6877777f2473484583cc6a455e9a888, type: 2}
@@ -3534,7 +3535,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 906958859}
+      - m_Target: {fileID: 1086682398}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -3752,7 +3753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20.93, y: -69}
+  m_AnchoredPosition: {x: -20.931, y: -112}
   m_SizeDelta: {x: 284.0876, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1713018966
@@ -3775,8 +3776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' - The mustard weapon has limited ammo. Killing enemies drops ammo that
-    the player can collect'
+  m_text: ' https://dl.acm.org/citation.cfm?id=2643035'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6877777f2473484583cc6a455e9a888, type: 2}
   m_sharedMaterial: {fileID: 6174275284075032198, guid: e6877777f2473484583cc6a455e9a888, type: 2}
@@ -3842,7 +3842,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 1.6170883, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1713018967
