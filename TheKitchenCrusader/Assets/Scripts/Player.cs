@@ -121,6 +121,8 @@ public class Player : MonoBehaviour
             // Destroy Player and Enemy
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            // Spawn the lose screen
+            hud.SpawnLoseMenu();
         }
         // if player collides with ammo
         if (collision.gameObject.CompareTag("Ammo"))
