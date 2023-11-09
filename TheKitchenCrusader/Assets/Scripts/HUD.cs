@@ -25,6 +25,11 @@ public class HUD : MonoBehaviour
     public float timeRemaining = 0f;
     public bool timeIsRunning = false;
 
+    // Ammo Field
+    [SerializeField]
+    TextMeshProUGUI ammoText;
+    public int ammoCount = 25;
+
     // Menu Manager field
     MenuManager mm;
     [SerializeField]
@@ -42,8 +47,11 @@ public class HUD : MonoBehaviour
         TablesLeft.text = tableText + numTables.ToString();
         timeIsRunning = true;
         timeText.SetText("WIP");
+        ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
     }
-
+    /// <summary>
+    /// Decrease table count
+    /// </summary>
     public void RemoveFurniture()
     {
         // Decrement Number of tables
@@ -56,6 +64,19 @@ public class HUD : MonoBehaviour
         if (numTables <= 0)
         {
             SpawnLoseMenu();
+        }
+    }
+    /// <summary>
+    /// Remove Mustard Ammo count
+    /// </summary>
+    public void RemoveMustardAmmo()
+    {
+        if (ammoCount > 0)
+        {
+            ammoCount -= 1;
+
+            // Update text
+            ammoText.text = "Mustard Ammo: " + ammoCount.ToString(); 
         }
     }
     // Update is called once per frame

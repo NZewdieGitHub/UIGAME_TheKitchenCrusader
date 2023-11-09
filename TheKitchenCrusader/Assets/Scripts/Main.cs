@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour
 {
-
     static private Main S;
 
     // Enemy Spaen setup

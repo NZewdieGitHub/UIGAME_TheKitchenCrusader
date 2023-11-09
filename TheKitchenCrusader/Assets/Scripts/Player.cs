@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
     public float playerSpeed = 8f;
     Vector2 movement;
 
-
+    // Ammunition fields
+    public bool outOfAmmo = false;
+    public int mustardAmmo = 25;
 
     // Shooting fields
     public GameObject projectiltePrefab;
@@ -20,10 +22,14 @@ public class Player : MonoBehaviour
     public bool ketchupEquipped = true;
     public bool mustardEquipped = false;
 
+    // hud support
+    HUD hud = new HUD();
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Save reference to HUD Script
+        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
     }
 
     // Update is called once per frame
@@ -85,12 +91,22 @@ public class Player : MonoBehaviour
             Rigidbody2D ketchupRigidbody = ketchup.GetComponent<Rigidbody2D>();
             ketchupRigidbody.velocity = Vector2.up * projectileSpeed;
         }
-        else if (mustardEquipped == true) 
+        else if (mustardEquipped == true && outOfAmmo == false) 
         {
             GameObject mustard = Instantiate<GameObject>(projectilePrefab2);
             mustard.transform.position = transform.position;
             Rigidbody2D mustardRigidbody = mustard.GetComponent<Rigidbody2D>();
             mustardRigidbody.velocity = Vector2.up * projectileSpeed;
+
+            mustardAmmo -= 1;
+            // update text
+            hud.RemoveMustardAmmo();
+
+        }
+        // check if mustard is out of ammo
+        if (mustardAmmo <= 0)
+        {
+            outOfAmmo = true;
         }
     }
     /// <summary>
