@@ -163,7 +163,7 @@ public class HUD : MonoBehaviour
         currentTime += 1f;
         // create seconds
         float seconds = Mathf.FloorToInt(currentTime / 60f);
-        timeText.SetText("Timer: " + timeRemaining);
+        timeText.SetText("Timer: " + timeRemaining.ToString("0"));
     }
 
 }

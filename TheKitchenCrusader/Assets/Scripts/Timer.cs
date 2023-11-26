@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     [SerializeField]
     TMP_Text timeText;
     string timerText = "Timer: ";
-    public float timeRemaining = 0;
+    public float timeRemaining = 0f;
     public bool timeIsRunning = false;
     // Start is called before the first frame update
     void Start()
@@ -30,14 +30,14 @@ public class Timer : MonoBehaviour
             {
                 Debug.Log("Tick");
                 // count down
-                timeRemaining -= Time.deltaTime;
-                updateTimer(timeRemaining);
+                timeRemaining -= 1 * Time.deltaTime;
+                timerText = timeRemaining.ToString("0");
             }
             else
             {
                 // declare that time is up
                 Debug.Log("Time is up.");
-                timeRemaining = 0;
+                timeRemaining = 0f;
                 timeIsRunning = false;
             }
          }
@@ -49,9 +49,9 @@ public class Timer : MonoBehaviour
     void updateTimer(float currentTime)
     {
         // increment the current time by one second
-        currentTime += 1;
+        currentTime += 1f;
         // create seconds
-        float seconds = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime / 60f);
 
         timeText.text = string.Format("Timer:", seconds);
     }
