@@ -17,8 +17,9 @@ public class Enemy : MonoBehaviour
 
     // Player connection field
     [SerializeField]
-    Player playerAmmo;
-    HUD mustardHud;
+    GameObject playerAmmo;
+    [SerializeField]
+    GameObject mustardHud;
 
     //sprite color setup
     SpriteRenderer spriteRenderer;
@@ -43,6 +44,7 @@ public class Enemy : MonoBehaviour
     {
         // get access to the sprite renderer component
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -54,9 +56,7 @@ public class Enemy : MonoBehaviour
         {
             // Game Object is below the screen, so destroy it
             Destroy(gameObject);
-            // Reduce mustard ammo as punishment
-            playerAmmo.mustardAmmo -= 5;
-            mustardHud.ammoCount -= 5;
+           
         }
        
     }
