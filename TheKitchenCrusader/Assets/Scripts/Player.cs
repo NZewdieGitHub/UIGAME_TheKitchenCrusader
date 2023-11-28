@@ -144,7 +144,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Decreases player's mustard ammo by 5
     /// </summary>
-    void reduceAmmoCount()
+    public void ReduceMustardAmmo()
     {
         mustardAmmo -= 5;
     }

@@ -16,10 +16,10 @@ public class Enemy : MonoBehaviour
     protected bool calledShipDestroyed = false;
 
     // Player connection field
-    [SerializeField]
-    GameObject playerAmmo;
-    [SerializeField]
-    HUD mustardHud;
+    //[SerializeField]
+    //public Player playerAmmo;
+    //[SerializeField]
+    //public GameObject mustardHud;
 
     //sprite color setup
     SpriteRenderer spriteRenderer;
@@ -41,19 +41,24 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // get access to the sprite renderer component
+        // get access to the sprite renderer, player, and HUD components
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //playerAmmo = GetComponent<Player>();
+        //mustardHud= GetComponent<HUD>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        // check if enemy is bleow the bottom of the screen
+        // check if enemy is below the bottom of the screen
         if (bndCheck.LocIs(BoundsCheck.eScreenLocs.offDown))
         {
             // Game Object is below the screen, so destroy it
             Destroy(gameObject);
+            // Decrease the ammo of mustard as punishment
+            //playerAmmo.ReduceMustardAmmo();
+            //mustardHud.ReduceAmmoCount();
         }
        
     }

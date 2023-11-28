@@ -168,7 +168,7 @@ public class HUD : MonoBehaviour
     /// <summary>
     /// Decreases ammo UI by 5
     /// </summary>
-    void reduceAmmoCount()
+    public void ReduceAmmoCount()
     {
         ammoCount -= 5;
     }
