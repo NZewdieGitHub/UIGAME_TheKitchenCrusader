@@ -130,6 +130,8 @@ MonoBehaviour:
   speed: 3
   health: 5
   powerUpDropChance: 1
+  playerAmmo: {fileID: 0}
+  mustardHud: {fileID: 0}
 --- !u!114 &1621107783453083915
 MonoBehaviour:
   m_ObjectHideFlags: 0

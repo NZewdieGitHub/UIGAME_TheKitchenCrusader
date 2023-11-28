@@ -165,5 +165,11 @@ public class HUD : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime / 60f);
         timeText.SetText("Timer: " + timeRemaining.ToString("0"));
     }
-
+    /// <summary>
+    /// Decreases ammo UI by 5
+    /// </summary>
+    void reduceAmmoCount()
+    {
+        ammoCount -= 5;
+    }
 }

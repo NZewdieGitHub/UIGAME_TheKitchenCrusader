@@ -141,4 +141,11 @@ public class Player : MonoBehaviour
             hud.AddMustardAmmo();
         }
     }
+    /// <summary>
+    /// Decreases player's mustard ammo by 5
+    /// </summary>
+    void reduceAmmoCount()
+    {
+        mustardAmmo -= 5;
+    }
 }

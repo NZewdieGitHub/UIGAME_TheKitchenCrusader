@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     GameObject playerAmmo;
     [SerializeField]
-    GameObject mustardHud;
+    HUD mustardHud;
 
     //sprite color setup
     SpriteRenderer spriteRenderer;
@@ -37,14 +37,12 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         bndCheck= GetComponent<BoundsCheck>();
-        
     }
     // Start is called before the first frame update
     void Start()
     {
         // get access to the sprite renderer component
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
     }
 
     // Update is called once per frame
@@ -56,7 +54,6 @@ public class Enemy : MonoBehaviour
         {
             // Game Object is below the screen, so destroy it
             Destroy(gameObject);
-           
         }
        
     }
