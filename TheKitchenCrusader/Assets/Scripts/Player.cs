@@ -152,6 +152,7 @@ public class Player : MonoBehaviour
         {
             // keep it 0
             mustardAmmo = 0;
+            outOfAmmo = true;
         }
     }
 }
