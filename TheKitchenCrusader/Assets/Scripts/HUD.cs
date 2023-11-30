@@ -36,6 +36,10 @@ public class HUD : MonoBehaviour
     GameObject WinMenu;
     [SerializeField]
     GameObject LoseMenu;
+
+    // bool to make sure mustard text never goes negative
+    private bool atLimit = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -170,7 +174,7 @@ public class HUD : MonoBehaviour
     /// </summary>
     public void ReduceAmmoCount()
     {
-        if (ammoCount >= 0)
+        if (ammoCount >= 0 && atLimit == true)
         {
             ammoCount -= 5;
             // Update text
@@ -179,6 +183,7 @@ public class HUD : MonoBehaviour
         // Check if mustard ammo is 0
         else
         {
+            atLimit = true;
             // keep it 0
             ammoCount = 0;
             ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
