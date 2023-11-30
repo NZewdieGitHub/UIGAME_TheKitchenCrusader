@@ -174,8 +174,19 @@ public class HUD : MonoBehaviour
     /// </summary>
     public void ReduceAmmoCount()
     {
-        ammoCount -= 5;
-        // Update text
-        ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
+        if (ammoCount > 0 && atLimit == false)
+        {
+            ammoCount -= 5;
+            // Update text
+            ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
+        }
+        // Check if mustard ammo is 0
+        else if (ammoCount == 0)
+        {
+            atLimit = true;
+            // keep it 0
+            ammoCount = 0;
+            ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
+        }
     }
 }
