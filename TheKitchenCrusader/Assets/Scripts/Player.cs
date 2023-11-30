@@ -147,5 +147,11 @@ public class Player : MonoBehaviour
     public void ReduceMustardAmmo()
     {
         mustardAmmo -= 5;
+        // check if the ammo count is at or below 0
+        if (mustardAmmo <= 0)
+        {
+            // keep it 0
+            mustardAmmo = 0;
+        }
     }
 }
