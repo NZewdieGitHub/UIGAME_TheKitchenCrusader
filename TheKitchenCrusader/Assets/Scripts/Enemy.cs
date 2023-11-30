@@ -16,11 +16,10 @@ public class Enemy : MonoBehaviour
     protected bool calledShipDestroyed = false;
 
     // Player connection field
-    public Player playerAmmo;
+    Player playerAmmo = new Player();
+
     // Hud Connection
-    public GameObject mustardHud;
-
-
+    HUD mustardHud = new HUD();
 
     //sprite color setup
     SpriteRenderer spriteRenderer;
@@ -44,8 +43,8 @@ public class Enemy : MonoBehaviour
     {
         // get access to the sprite renderer, player, and HUD components
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //playerAmmo = GetComponent<Player>();
-        //mustardHud= GetComponent<HUD>();
+        playerAmmo = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        mustardHud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
     }
 
     // Update is called once per frame
@@ -58,10 +57,9 @@ public class Enemy : MonoBehaviour
             // Game Object is below the screen, so destroy it
             Destroy(gameObject);
             // Decrease the ammo of mustard as punishment
-            //playerAmmo.ReduceMustardAmmo();
-            //mustardHud.ReduceAmmoCount();
+            playerAmmo.ReduceMustardAmmo();
+            mustardHud.ReduceAmmoCount();
         }
-       
     }
     /// <summary>
     /// Moves the enemy down
