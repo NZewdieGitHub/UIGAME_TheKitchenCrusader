@@ -16,10 +16,11 @@ public class Enemy : MonoBehaviour
     protected bool calledShipDestroyed = false;
 
     // Player connection field
-    //[SerializeField]
-    //public Player playerAmmo;
-    //[SerializeField]
-    //public GameObject mustardHud;
+    public Player playerAmmo;
+    // Hud Connection
+    public GameObject mustardHud;
+
+
 
     //sprite color setup
     SpriteRenderer spriteRenderer;
