@@ -180,8 +180,13 @@ public class HUD : MonoBehaviour
             // Update text
             ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
         }
+        else if (ammoCount < 5)
+        {
+            ammoCount = 0;
+            ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
+        }
         // Check if mustard ammo is 0
-        else if (ammoCount == 0)
+        else if (ammoCount <= 0)
         {
             atLimit = true;
             // keep it 0

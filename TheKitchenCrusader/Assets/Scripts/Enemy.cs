@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour
             // Decrease the ammo of mustard as punishment
             playerAmmo.ReduceMustardAmmo();
             mustardHud.ReduceAmmoCount();
+
         }
     }
     /// <summary>
