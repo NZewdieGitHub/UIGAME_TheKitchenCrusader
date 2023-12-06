@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    
+    // Animation fields
+    public Animator animator;
+
+
     // Player movement setup
     public Rigidbody2D rb2d;
     public float playerSpeed = 8f;
@@ -76,6 +79,8 @@ public class Player : MonoBehaviour
     {
         // Used for actual movement
         rb2d.MovePosition(rb2d.position + movement * playerSpeed * Time.fixedDeltaTime);
+        // Update animation
+        animator.SetFloat("Speed", Mathf.Abs(playerSpeed));
     }
 
     /// <summary>
