@@ -36,18 +36,16 @@ public class Player : MonoBehaviour
 
         // Set player to idle
         animator = gameObject.GetComponent<Animator>();
+        //animator.SetFloat("MovementSpeed", 0f);
+        //isMoving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // currently set player anim to idle
-        animator.SetFloat("MovementSpeed", 0f);
-        //isMoving = false;
-
         //Used for inputs
         movement.x = Input.GetAxisRaw("Horizontal");
-       movement.y = Input.GetAxisRaw("Vertical"); 
+        movement.y = Input.GetAxisRaw("Vertical");
 
         // when player presses space
         if (Input.GetKeyDown(KeyCode.Space))
@@ -71,13 +69,29 @@ public class Player : MonoBehaviour
             ketchupEquipped = true;
             mustardEquipped = false;
         }
-        else if (Input.GetKeyDown(KeyCode.M)) 
+        else if (Input.GetKeyDown(KeyCode.M))
         {
             Debug.Log("Mustard is equipped");
             mustardEquipped = true;
-            ketchupEquipped= false;
+            ketchupEquipped = false;
         }
-        
+
+        // check for animation
+        if (movement.x > 0f)
+        {
+            // Update animation
+            animator.SetFloat("MovementSpeed", 1f);
+        }
+        else if (movement.y > 0f)
+        {
+            // Update animation
+            animator.SetFloat("MovementSpeed", 1f);
+        }
+        else
+        {
+            // keep player animation in idle
+            animator.SetFloat("MovementSpeed", 0f);
+        }
     }
     /// <summary>
     /// Executed 50 times a second
@@ -86,9 +100,6 @@ public class Player : MonoBehaviour
     {
         // Used for actual movement
         rb2d.MovePosition(rb2d.position + movement * playerSpeed * Time.fixedDeltaTime);
-
-        // Update animation
-        animator.SetFloat("MovementSpeed", playerSpeed);
     }
 
     /// <summary>
