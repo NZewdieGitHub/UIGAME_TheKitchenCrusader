@@ -35,17 +35,18 @@ public class Player : MonoBehaviour
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
 
         // Set player to idle
-        animator = gameObject.AddComponent<Animator>();
-        animator.SetFloat("MovementSpeed", 0f);
-        isMoving = false;
-
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // currently set player anim to idle
+        animator.SetFloat("MovementSpeed", 0f);
+        //isMoving = false;
+
         //Used for inputs
-       movement.x = Input.GetAxisRaw("Horizontal");
+        movement.x = Input.GetAxisRaw("Horizontal");
        movement.y = Input.GetAxisRaw("Vertical"); 
 
         // when player presses space
