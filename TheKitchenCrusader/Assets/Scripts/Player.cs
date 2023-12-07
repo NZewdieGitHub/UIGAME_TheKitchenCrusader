@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     // Animation fields
     public Animator animator;
-
+    public bool isMoving = false;
 
     // Player movement setup
     public Rigidbody2D rb2d;
@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
         // Set player to idle
         animator = gameObject.AddComponent<Animator>();
         animator.SetFloat("MovementSpeed", 0f);
+        isMoving = false;
+
     }
 
     // Update is called once per frame
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
     {
         // Used for actual movement
         rb2d.MovePosition(rb2d.position + movement * playerSpeed * Time.fixedDeltaTime);
+
         // Update animation
         animator.SetFloat("MovementSpeed", playerSpeed);
     }
