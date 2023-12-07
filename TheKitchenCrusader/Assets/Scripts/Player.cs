@@ -33,6 +33,10 @@ public class Player : MonoBehaviour
     {
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+
+        // Set player to idle
+        animator = gameObject.AddComponent<Animator>();
+        animator.SetFloat("MovementSpeed", 0f);
     }
 
     // Update is called once per frame
@@ -80,7 +84,7 @@ public class Player : MonoBehaviour
         // Used for actual movement
         rb2d.MovePosition(rb2d.position + movement * playerSpeed * Time.fixedDeltaTime);
         // Update animation
-        animator.SetFloat("Speed", Mathf.Abs(playerSpeed));
+        animator.SetFloat("MovementSpeed", playerSpeed);
     }
 
     /// <summary>

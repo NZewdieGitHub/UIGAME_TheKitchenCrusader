@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1427e2ab127f99d4fa2d81419cdb508c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 7683184152092027000}
   rb2d: {fileID: 1058406873008309151}
   playerSpeed: 8
   outOfAmmo: 0
@@ -211,7 +211,7 @@ Animator:
   m_GameObject: {fileID: 2632765284840449491}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61099370f28749b4ea42a17c021b8dcd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
