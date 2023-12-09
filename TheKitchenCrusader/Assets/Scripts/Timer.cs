@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
             // if time hasn't run out
             if (timeRemaining >= 0)
             {
-                Debug.Log("Tick");
+               // Debug.Log("Tick");
                 // count down
                 timeRemaining -= 1 * Time.deltaTime;
                 timerText = timeRemaining.ToString("0");

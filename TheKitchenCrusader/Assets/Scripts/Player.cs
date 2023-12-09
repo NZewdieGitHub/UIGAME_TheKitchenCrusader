@@ -52,9 +52,11 @@ public class Player : MonoBehaviour
         {
             // fire the bullet
             TempFire();
+            // Update player animation
+            animator.SetFloat("KetchupSpeed", 1f);
         }
-        // check when player releases space
-        if (Input.GetKeyUp(KeyCode.Space)) 
+        //check when player releases space
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             // set animation back to idle
             animator.SetFloat("KetchupSpeed", 0f);
@@ -120,7 +122,7 @@ public class Player : MonoBehaviour
             ketchup.transform.position = transform.position;
             Rigidbody2D ketchupRigidbody = ketchup.GetComponent<Rigidbody2D>();
             ketchupRigidbody.velocity = Vector2.up * projectileSpeed;
-            animator.SetFloat("KetchupSpeed", 1f);
+         
         }
         else if (mustardEquipped == true && outOfAmmo == false) 
         {
