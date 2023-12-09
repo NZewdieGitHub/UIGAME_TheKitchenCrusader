@@ -77,12 +77,12 @@ public class Player : MonoBehaviour
         }
 
         // check for animation
-        if (movement.x > 0f)
+        if (movement.x > 0f || movement.x < 0f)
         {
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
         }
-        else if (movement.y > 0f)
+        else if (movement.y > 0f || movement.y < 0f)
         {
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
