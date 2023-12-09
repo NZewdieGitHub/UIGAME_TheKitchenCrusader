@@ -110,7 +110,7 @@ public class HUD : MonoBehaviour
             // if time hasn't run out
             if (timeRemaining >= 0)
             {
-                Debug.Log("Tick");
+                // Debug.Log("Tick");
                 // count down
                 timeRemaining -=  Time.deltaTime;
                 updateTimer(timeRemaining);
