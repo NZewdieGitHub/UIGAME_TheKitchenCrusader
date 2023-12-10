@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     float shootingAnimK;
     float shootingAnimM;
     bool isFiringK;
+    bool isFiringM;
+
     // Player movement setup
     public Rigidbody2D rb2d;
     public float playerSpeed = 8f;
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour
         shootingAnimK = animator.GetFloat("KetchupSpeed");
         shootingAnimM = animator.GetFloat("MustardSpeed");
         isFiringK = animator.GetBool("IsFiringKetchup");
+        isFiringM = animator.GetBool("IsFiringMustard");
     }
 
     // Update is called once per frame
@@ -77,10 +80,10 @@ public class Player : MonoBehaviour
             animator.SetBool("IsFiringKetchup", false);
            
         }
-        //else if (Input.GetKeyUp(KeyCode.Space) && mustardEquipped == true)
-        //{
+        else if (Input.GetKeyUp(KeyCode.Space) && mustardEquipped == true)
+        {
 
-        //}
+        }
         // when player presses escape
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -142,7 +145,7 @@ public class Player : MonoBehaviour
             Rigidbody2D ketchupRigidbody = ketchup.GetComponent<Rigidbody2D>();
             ketchupRigidbody.velocity = Vector2.up * projectileSpeed;
             // Update player animation
-            animator.SetFloat("KetchupSpeed", 1f);
+           // animator.SetFloat("KetchupSpeed", 1f);
 
         }
         else if (mustardEquipped == true && outOfAmmo == false) 
