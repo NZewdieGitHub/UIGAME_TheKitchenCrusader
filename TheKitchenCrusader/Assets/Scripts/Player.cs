@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     float movementAnim;
     float shootingAnimK;
     float shootingAnimM;
+    bool isFiringK;
     // Player movement setup
     public Rigidbody2D rb2d;
     public float playerSpeed = 8f;
@@ -45,12 +46,13 @@ public class Player : MonoBehaviour
         movementAnim = animator.GetFloat("MovementSpeed");
         shootingAnimK = animator.GetFloat("KetchupSpeed");
         shootingAnimM = animator.GetFloat("MustardSpeed");
+        isFiringK = animator.GetBool("IsFiringKetchup");
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Used for inputs
+        //Used for inputs
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -64,6 +66,7 @@ public class Player : MonoBehaviour
             {
                 // stop walking animation 
                 animator.SetFloat("MovementSpeed", 0f);
+                animator.SetBool("IsFiringKetchup", true);
             }
         }
         //check when player releases space
@@ -100,12 +103,12 @@ public class Player : MonoBehaviour
         }
 
         // check for animation
-        if (movement.x > 0f && shootingAnimK == 0f || movement.x < 0f && shootingAnimK == 0f)
+        if (movement.x > 0f && isFiringK == false || movement.x < 0f && isFiringK == false)
         {
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
         }
-        else if (movement.y > 0f && shootingAnimK == 0f || movement.y < 0f && shootingAnimK == 0f)
+        else if (movement.y > 0f && isFiringK == false || movement.y < 0f && isFiringK == false)
         {
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
