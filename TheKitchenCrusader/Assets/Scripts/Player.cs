@@ -64,7 +64,14 @@ public class Player : MonoBehaviour
         {
             // fire the bullet
             TempFire();
-            animator.SetBool("IsFiringKetchup", true);
+            if (ketchupEquipped == true)
+            {
+                animator.SetBool("IsFiringKetchup", true);
+            }
+            else if (mustardEquipped == true)
+            {
+                animator.SetBool("IsFiringMustard", true);
+            }
             // check if walk animation is playing
             if (movementAnim == 1f)
             {
@@ -107,7 +114,6 @@ public class Player : MonoBehaviour
             mustardEquipped = true;
             ketchupEquipped = false;
         }
-
         // check for animation
         if (movement.x > 0f && isFiringK == false || movement.x < 0f && isFiringK == false)
         {
@@ -119,7 +125,16 @@ public class Player : MonoBehaviour
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
         }
-
+        else if (movement.x > 0f && isFiringM == false || movement.x < 0f && isFiringM == false)
+        {
+            // Update animation
+            animator.SetFloat("MovementSpeed", 1f);
+        }
+        else if (movement.y > 0f && isFiringM == false || movement.y < 0f && isFiringM == false)
+        {
+            // Update animation
+            animator.SetFloat("MovementSpeed", 1f);
+        }
         else
         {
             // keep player animation in idle
