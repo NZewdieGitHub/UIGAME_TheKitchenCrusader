@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
             animator.SetFloat("KetchupSpeed", 1f);
         }
         //check when player releases space
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space) && ketchupEquipped == true)
         {
             // set animation back to idle
             animator.SetFloat("KetchupSpeed", 0f);
