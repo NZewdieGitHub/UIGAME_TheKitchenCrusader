@@ -61,12 +61,12 @@ public class Player : MonoBehaviour
         {
             // fire the bullet
             TempFire();
+            animator.SetBool("IsFiringKetchup", true);
             // check if walk animation is playing
             if (movementAnim == 1f)
             {
                 // stop walking animation 
                 animator.SetFloat("MovementSpeed", 0f);
-                animator.SetBool("IsFiringKetchup", true);
             }
         }
         //check when player releases space
@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
         {
             // set animation back to idle
             animator.SetFloat("KetchupSpeed", 0f);
+            animator.SetBool("IsFiringKetchup", false);
            
         }
         //else if (Input.GetKeyUp(KeyCode.Space) && mustardEquipped == true)
