@@ -82,7 +82,9 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Space) && mustardEquipped == true)
         {
-
+            // set animation back to idle
+            animator.SetFloat("MustardSpeed", 0f);
+            animator.SetBool("IsFiringMustard", false);
         }
         // when player presses escape
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -117,6 +119,7 @@ public class Player : MonoBehaviour
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
         }
+
         else
         {
             // keep player animation in idle
@@ -158,7 +161,8 @@ public class Player : MonoBehaviour
             mustardAmmo -= 1;
             // update text
             hud.RemoveMustardAmmo();
-
+            // Update player animation
+            animator.SetFloat("MustardSpeed", 1f);
         }
         // check if mustard is out of ammo
         if (mustardAmmo <= 0)
