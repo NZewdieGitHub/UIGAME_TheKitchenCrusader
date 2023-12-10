@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     // Animation fields
     public Animator animator;
     public bool isMoving = false;
+    float movementAnim;
 
     // Player movement setup
     public Rigidbody2D rb2d;
@@ -37,7 +38,10 @@ public class Player : MonoBehaviour
         // Set player to idle
         animator = gameObject.GetComponent<Animator>();
         //animator.SetFloat("MovementSpeed", 0f);
-        //isMoving = false;
+        //isMoving = false
+        //
+        // get the animator's movement float
+        movementAnim = animator.GetFloat("MovementSpeed");
     }
 
     // Update is called once per frame
@@ -52,14 +56,19 @@ public class Player : MonoBehaviour
         {
             // fire the bullet
             TempFire();
-            
+            // check if walk animation is playing
+            if (movementAnim == 1f)
+            {
+                // stop walking animation 
+                animator.SetFloat("MovementSpeed", 0f);
+            }
         }
         //check when player releases space
         else if (Input.GetKeyUp(KeyCode.Space) && ketchupEquipped == true)
         {
             // set animation back to idle
             animator.SetFloat("KetchupSpeed", 0f);
-            // check if walk animation is playing
+           
         }
         //else if (Input.GetKeyUp(KeyCode.Space) && mustardEquipped == true)
         //{
