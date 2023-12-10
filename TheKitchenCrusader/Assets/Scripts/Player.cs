@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     public Animator animator;
     public bool isMoving = false;
     float movementAnim;
-
+    float shootingAnimK;
+    float shootingAnimM;
     // Player movement setup
     public Rigidbody2D rb2d;
     public float playerSpeed = 8f;
@@ -40,8 +41,10 @@ public class Player : MonoBehaviour
         //animator.SetFloat("MovementSpeed", 0f);
         //isMoving = false
         //
-        // get the animator's movement float
+        // get the animator's movement and shooting floats
         movementAnim = animator.GetFloat("MovementSpeed");
+        shootingAnimK = animator.GetFloat("KetchupSpeed");
+        shootingAnimM = animator.GetFloat("MustardSpeed");
     }
 
     // Update is called once per frame
@@ -97,12 +100,12 @@ public class Player : MonoBehaviour
         }
 
         // check for animation
-        if (movement.x > 0f || movement.x < 0f)
+        if (movement.x > 0f && shootingAnimK == 0f || movement.x < 0f && shootingAnimK == 0f)
         {
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
         }
-        else if (movement.y > 0f || movement.y < 0f)
+        else if (movement.y > 0f && shootingAnimK == 0f || movement.y < 0f && shootingAnimK == 0f)
         {
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
