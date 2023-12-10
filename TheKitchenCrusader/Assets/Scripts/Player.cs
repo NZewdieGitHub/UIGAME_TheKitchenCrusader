@@ -145,7 +145,7 @@ public class Player : MonoBehaviour
             Rigidbody2D ketchupRigidbody = ketchup.GetComponent<Rigidbody2D>();
             ketchupRigidbody.velocity = Vector2.up * projectileSpeed;
             // Update player animation
-           // animator.SetFloat("KetchupSpeed", 1f);
+            animator.SetFloat("KetchupSpeed", 1f);
 
         }
         else if (mustardEquipped == true && outOfAmmo == false) 
