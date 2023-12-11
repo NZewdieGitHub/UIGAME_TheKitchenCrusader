@@ -223,6 +223,7 @@ public class Player : MonoBehaviour
 
             // refill ammo
             mustardAmmo += 5;
+            outOfAmmo = false;
 
             if (mustardAmmo >= 25)
             {
