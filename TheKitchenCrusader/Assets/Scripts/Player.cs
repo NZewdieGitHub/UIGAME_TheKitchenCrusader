@@ -64,20 +64,29 @@ public class Player : MonoBehaviour
         {
             // fire the bullet
             TempFire();
+
             if (ketchupEquipped == true)
             {
                 animator.SetBool("IsFiringKetchup", true);
+                // check if walk animation is playing
+                if (movementAnim == 1f)
+                {
+                    // stop walking animation 
+                    animator.SetFloat("MovementSpeed", 0f);
+                }
             }
-            else if (mustardEquipped == true)
+            
+            if (mustardEquipped == true)
             {
                 animator.SetBool("IsFiringMustard", true);
+                // check if walk animation is playing
+                if (movementAnim == 1f)
+                {
+                    // stop walking animation 
+                    animator.SetFloat("MovementSpeed", 0f);
+                }
             }
-            // check if walk animation is playing
-            if (movementAnim == 1f)
-            {
-                // stop walking animation 
-                animator.SetFloat("MovementSpeed", 0f);
-            }
+            
         }
         //check when player releases space
         else if (Input.GetKeyUp(KeyCode.Space) && ketchupEquipped == true)
@@ -130,6 +139,7 @@ public class Player : MonoBehaviour
             // keep player animation in idle
             animator.SetFloat("MovementSpeed", 0f);
         }
+
         if (movement.x > 0f && isFiringM == false || movement.x < 0f && isFiringM == false)
         {
             // Update animation
@@ -177,12 +187,12 @@ public class Player : MonoBehaviour
             mustard.transform.position = transform.position;
             Rigidbody2D mustardRigidbody = mustard.GetComponent<Rigidbody2D>();
             mustardRigidbody.velocity = Vector2.up * projectileSpeed;
-
+            // Update player animation
+            animator.SetFloat("MustardSpeed", 1f);
             mustardAmmo -= 1;
             // update text
             hud.RemoveMustardAmmo();
-            // Update player animation
-            animator.SetFloat("MustardSpeed", 1f);
+            
         }
         // check if mustard is out of ammo
         if (mustardAmmo <= 0)
