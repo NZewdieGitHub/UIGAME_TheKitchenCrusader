@@ -125,7 +125,12 @@ public class Player : MonoBehaviour
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
         }
-        else if (movement.x > 0f && isFiringM == false || movement.x < 0f && isFiringM == false)
+        else
+        {
+            // keep player animation in idle
+            animator.SetFloat("MovementSpeed", 0f);
+        }
+        if (movement.x > 0f && isFiringM == false || movement.x < 0f && isFiringM == false)
         {
             // Update animation
             animator.SetFloat("MovementSpeed", 1f);
