@@ -10,11 +10,19 @@ public class Furniture : MonoBehaviour
     public float health = 3f;
     HUD hud = new HUD();
 
+    // position fields
+    float ranPosX = Random.Range(0f, 6f);
+    float ranPosY = Random.Range(0f, 3f);
     // Start is called before the first frame update
     void Start()
     {
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+
+        // Give table a random position
+        Vector2 pos = transform.position;
+        pos = new Vector2(ranPosX, ranPosY);
+        transform.position = pos;
     }
 
     // Update is called once per frame
