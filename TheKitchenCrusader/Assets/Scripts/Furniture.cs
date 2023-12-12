@@ -11,8 +11,8 @@ public class Furniture : MonoBehaviour
     HUD hud = new HUD();
 
     // position fields
-    float ranPosX = Random.Range(0f, 6f);
-    float ranPosY = Random.Range(0f, 3f);
+    int ranPosX = Random.Range(0, 6);
+    int ranPosY = Random.Range(0, 3);
     // Start is called before the first frame update
     void Start()
     {
