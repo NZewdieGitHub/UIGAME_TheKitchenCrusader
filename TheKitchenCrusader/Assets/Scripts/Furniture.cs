@@ -11,8 +11,8 @@ public class Furniture : MonoBehaviour
     HUD hud = new HUD();
 
     // position fields
-    int ranPosX = Random.Range(0, 6);
-    int ranPosY = Random.Range(0, 3);
+    int ranPosX = Random.Range(5, 8);
+    int ranPosY = Random.Range(2, 3);
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class Furniture : MonoBehaviour
         // Give table a random position
         Vector2 pos = transform.position;
         pos = new Vector2(ranPosX, ranPosY);
-        transform.position = pos;
+        Instantiate(gameObject,pos,Quaternion.identity);
     }
 
     // Update is called once per frame
