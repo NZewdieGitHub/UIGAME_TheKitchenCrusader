@@ -18,11 +18,6 @@ public class Furniture : MonoBehaviour
     {
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
-
-        // Give table a random position
-        Vector2 pos = transform.position;
-        pos = new Vector2(ranPosX, ranPosY);
-        Instantiate(gameObject,pos,Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -54,5 +49,15 @@ public class Furniture : MonoBehaviour
                 
             }
         }
+    }
+    /// <summary>
+    /// Randomize table positions
+    /// </summary>
+    public void RandomizeTables()
+    {
+        // Give table a random position
+        Vector2 pos = transform.position;
+        pos = new Vector2(ranPosX, ranPosY);
+        Instantiate(gameObject, pos, Quaternion.identity);
     }
 }

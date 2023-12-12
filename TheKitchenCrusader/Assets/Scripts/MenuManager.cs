@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    // Fields for random table position
+    Furniture furniture = new Furniture();
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        furniture.GetComponent<Furniture>();
     }
 
    
