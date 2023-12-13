@@ -33,7 +33,7 @@ public class HUD : MonoBehaviour
     string timerText = "Timer: ";
     public float timeRemaining = 0f;
     public bool timeIsRunning = false;
-    float backwardsTime = 30f;
+    float backwardsTime = 0f;
 
     // Ammo Field
     [SerializeField]
@@ -124,6 +124,9 @@ public class HUD : MonoBehaviour
                 // count down
                 timeRemaining -=  Time.deltaTime;
                 updateTimer(timeRemaining);
+
+                // have timer count up
+                backwardsTime += Time.deltaTime;
             }
             else
             {
@@ -167,7 +170,7 @@ public class HUD : MonoBehaviour
         LoseMenu.SetActive(true);
         Time.timeScale = 0f;
         // set player's results
-        recordText2.SetText("You've lasted for " + timeRemaining.ToString("0") + " seconds.");
+        recordText2.SetText("You've lasted for " + backwardsTime.ToString("0") + " seconds.");
     }
     /// <summary>
     /// Update and display timer text every frame
@@ -181,6 +184,7 @@ public class HUD : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime / 60f);
         timeText.SetText("Timer: " + timeRemaining.ToString("0"));
     }
+    
     /// <summary>
     /// Decreases ammo UI by 5
     /// </summary>
