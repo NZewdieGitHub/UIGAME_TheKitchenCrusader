@@ -33,7 +33,8 @@ public class HUD : MonoBehaviour
     string timerText = "Timer: ";
     public float timeRemaining = 0f;
     public bool timeIsRunning = false;
-    public float backwardsTimeRemaining = 0f;
+    float backwardsTime = 30f;
+
     // Ammo Field
     [SerializeField]
     TextMeshProUGUI ammoText;
@@ -122,7 +123,6 @@ public class HUD : MonoBehaviour
                 // Debug.Log("Tick");
                 // count down
                 timeRemaining -=  Time.deltaTime;
-                backwardsTimeRemaining -= Time.deltaTime;
                 updateTimer(timeRemaining);
             }
             else
@@ -130,7 +130,6 @@ public class HUD : MonoBehaviour
                 // declare that time is up
                 Debug.Log("Time is up.");
                 timeRemaining = 0;
-                backwardsTimeRemaining = 25f;
                 timeIsRunning = false;
                 // Check to see if the perfered ammount of tables are
                 // protected
@@ -168,7 +167,7 @@ public class HUD : MonoBehaviour
         LoseMenu.SetActive(true);
         Time.timeScale = 0f;
         // set player's results
-        recordText2.SetText("You've lasted for " + backwardsTimeRemaining.ToString("0") + " seconds.");
+        recordText2.SetText("You've lasted for " + timeRemaining.ToString("0") + " seconds.");
     }
     /// <summary>
     /// Update and display timer text every frame
@@ -180,7 +179,7 @@ public class HUD : MonoBehaviour
         currentTime += 1f;
         // create seconds
         float seconds = Mathf.FloorToInt(currentTime / 60f);
-        timeText.SetText("Timer: " + currentTime.ToString("0"));
+        timeText.SetText("Timer: " + timeRemaining.ToString("0"));
     }
     /// <summary>
     /// Decreases ammo UI by 5
