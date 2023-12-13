@@ -169,8 +169,17 @@ public class HUD : MonoBehaviour
         //{
         LoseMenu.SetActive(true);
         Time.timeScale = 0f;
-        // set player's results
-        recordText2.SetText("You've lasted for " + backwardsTime.ToString("0") + " seconds.");
+
+        if (numTables == 1)
+        {
+            // set player's results
+            recordText2.SetText("You've lasted for " + backwardsTime.ToString("0") + " seconds, but didn't defend 2/3 of tables.");
+        }
+        else
+        {
+            // set player's results
+            recordText2.SetText("You've lasted for " + backwardsTime.ToString("0") + " seconds.");
+        }
     }
     /// <summary>
     /// Update and display timer text every frame
