@@ -16,6 +16,8 @@ public class HUD : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI recordText;
+    [SerializeField]
+    TextMeshProUGUI recordText2;
     string tables = "You have defended: ";
     string results = "tables in the level";
     // Timer fields
@@ -156,6 +158,8 @@ public class HUD : MonoBehaviour
         //{
         LoseMenu.SetActive(true);
         Time.timeScale = 0f;
+        // set player's results
+        recordText2.SetText("You've lasted for " + timeRemaining.ToString("0") + " seconds.");
     }
     /// <summary>
     /// Update and display timer text every frame
