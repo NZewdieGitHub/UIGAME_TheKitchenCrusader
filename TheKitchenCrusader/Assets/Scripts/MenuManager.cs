@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        furniture.GetComponent<Furniture>();
+        furniture = GameObject.FindGameObjectWithTag("Furniture").GetComponent<Furniture>();
     }
 
    
@@ -30,6 +30,8 @@ public class MenuManager : MonoBehaviour
         {
             // resume game's runtime
             Time.timeScale = 1;
+            // randomize table positions
+            furniture.RandomizeTables();
         }
     }
     /// <summary>
