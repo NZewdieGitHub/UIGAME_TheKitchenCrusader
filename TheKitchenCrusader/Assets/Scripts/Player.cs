@@ -116,12 +116,14 @@ public class Player : MonoBehaviour
             Debug.Log("Ketchup is equipped");
             ketchupEquipped = true;
             mustardEquipped = false;
+            hud.SwitchTextK();
         }
         else if (Input.GetKeyDown(KeyCode.M))
         {
             Debug.Log("Mustard is equipped");
             mustardEquipped = true;
             ketchupEquipped = false;
+            hud.SwitchTextM();
         }
         // check for animation
         if (movement.x > 0f && isFiringK == false || movement.x < 0f && isFiringK == false)

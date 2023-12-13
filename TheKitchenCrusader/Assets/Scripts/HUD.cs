@@ -20,6 +20,13 @@ public class HUD : MonoBehaviour
     TextMeshProUGUI recordText2;
     string tables = "You have defended: ";
     string results = "tables in the level";
+
+    // Weapon UI
+    [SerializeField]
+    GameObject KetchupText;
+    [SerializeField]
+    GameObject MustardText;
+
     // Timer fields
     [SerializeField]
     TMP_Text timeText;
@@ -206,5 +213,21 @@ public class HUD : MonoBehaviour
             ammoCount = 0;
             ammoText.text = "Mustard Ammo: " + ammoCount.ToString();
         }
+    }
+    /// <summary>
+    /// Switch weapon text from Mustard to Ketchup when neccessary
+    /// </summary>
+    public void SwitchTextK()
+    {
+        MustardText.SetActive(false);
+        KetchupText.SetActive(true);
+    }
+    /// <summary>
+    /// Switch weapon text from Ketchup to Mustard when neccessary
+    /// </summary>
+    public void SwitchTextM()
+    {
+        KetchupText.SetActive(true);
+        MustardText.SetActive(true);
     }
 }
