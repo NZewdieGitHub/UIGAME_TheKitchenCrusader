@@ -880,7 +880,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1048851279}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.6854659}
+  m_AnchorMin: {x: 0, y: 0.8075233}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -2455,9 +2455,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.69, y: 625.63}
+  m_AnchoredPosition: {x: 134.69, y: 1031.9}
   m_SizeDelta: {x: 39.565, y: 30}
-  m_Pivot: {x: 0.5000001, y: 0.49999934}
+  m_Pivot: {x: 0.5000001, y: 0.50000024}
 --- !u!114 &1034408272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3358,7 +3358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.475006, y: 615.63}
+  m_AnchoredPosition: {x: -54.475006, y: 1021.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419158972
@@ -3641,7 +3641,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 878.26}
+  m_SizeDelta: {x: 0, y: 1690.76}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1532882348
 MonoBehaviour:
@@ -3677,16 +3677,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n- Updated Art on player, tables and enemies.\n\n- Gave animations
-    to Player and enemies.\n\nPerformance Metric:\n\n- Pressing 'M' will switch you're
-    weapon from ketchup to mustard\n\n- Pressing 'K' will switch you're weapon from
-    mustard to ketchup.\n\n- A performance grade is shown both in-game and when you
-    win the game, showing how many tables you defended.\n\n- When the player dies,
-    they'll be known how long they survived for.\n\nRenewable Resource: \n\n- The
-    mustard weapon has limited ammo. Killing enemies drops ammo that the player can
-    collect.\n\nIndividual Usable Items:\n\n- Whenever the player switches items
-    between ketchup and mustard, there's a UI indicator that shows which weapon they're
-    currently using."
+  m_text: "\n\n- Updated Art on player, tables, level backgrounds and enemies.\n\n-
+    Gave animations to Player and enemies.\n\nPerformance Metric:\n\n- Pressing 'M'
+    will switch you're weapon from ketchup to mustard\n\n- Pressing 'K' will switch
+    you're weapon from mustard to ketchup.\n\n- A performance grade is shown both
+    in-game and when you win the game, showing how many tables you defended.\n\n-
+    When the player dies, they'll be known how long they survived for.\n\nRenewable
+    Resource: \n\n- The mustard weapon has limited ammo. Killing enemies drops ammo
+    that the player can collect.\n\nIndividual Usable Items:\n\n- Whenever the player
+    switches items between ketchup and mustard, there's a UI indicator that shows
+    which weapon they're currently using.\n\nPunishment:\n\n- When an enemy passes
+    through the bottom of the level, the player loses five shorts of mustard ammunition
+    (Mustard Ammo UI shows this).\n\nRandomness: \n\n- Tables have random positions
+    every time the game starts or restarts.\n\nTimer: \n\n- UI Timer now counts down
+    in whole numbers instead of decimals. \n\nMenus:\n\n- Gave every panel (Credis,
+    grading, and instructions) a scrollview.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6877777f2473484583cc6a455e9a888, type: 2}
   m_sharedMaterial: {fileID: 6174275284075032198, guid: e6877777f2473484583cc6a455e9a888, type: 2}
@@ -4037,7 +4042,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 321990040}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.31453413
+  m_Size: 0.19247669
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
