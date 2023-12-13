@@ -227,7 +227,7 @@ public class HUD : MonoBehaviour
     /// </summary>
     public void SwitchTextM()
     {
-        KetchupText.SetActive(true);
+        KetchupText.SetActive(false);
         MustardText.SetActive(true);
     }
 }

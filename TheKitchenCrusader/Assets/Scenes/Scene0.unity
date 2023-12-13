@@ -626,6 +626,8 @@ MonoBehaviour:
   TablesLeft: {fileID: 1341327809}
   recordText: {fileID: 1641490658}
   recordText2: {fileID: 1798480393}
+  KetchupText: {fileID: 1944811377}
+  MustardText: {fileID: 937404264}
   timeText: {fileID: 24492902}
   timeRemaining: 30
   timeIsRunning: 0
